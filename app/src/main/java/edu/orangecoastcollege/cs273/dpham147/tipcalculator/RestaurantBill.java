@@ -13,7 +13,7 @@ public class RestaurantBill {
     public RestaurantBill() {
         mAmount = 0.0;
         mTipAmount = 0.0;
-        mTipPercent = 0.0;
+        mTipPercent = 0.15;
         mTotalAmount = 0.0;
     }
 
@@ -55,6 +55,6 @@ public class RestaurantBill {
 
     private double recalculateAmount() {
         mTipAmount = mAmount * mTipPercent;
-        mTotalAmount = mAmount + mTipAmount;
+        return mTotalAmount = mAmount + mTipAmount;
     }
 }

@@ -55,13 +55,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
             // Try to get the amount from amountEditText
             try {
-                double amount = Double.parseDouble(charSequence.toString()) / 100.0;
-                currentBill.setmAmount(amount);
-            }
-            catch (NumberFormatException e)
-            {
+                if (charSequence.length() != 0){
+                    double amount = Double.parseDouble(charSequence.toString()) / 100.0;
+                    currentBill.setmAmount(amount);
+                }
+                else {
+                    currentBill.setmAmount(0.0);
+                }
+
+            } catch (NumberFormatException e) {
                 amountEditText.setText("");
             }
 
